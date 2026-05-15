@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFE 071 Atención Digital</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#eef2ef;color:#222;}
+header{background:#006b3f;color:white;padding:35px 20px;text-align:center;}
+header h1{font-size:32px;margin-bottom:10px;}
+header h2{font-size:22px;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+.card{background:white;padding:25px;margin-bottom:25px;border-radius:18px;border-left:8px solid #006b3f;box-shadow:0 4px 14px rgba(0,0,0,.08);}
+.card h2{color:#006b3f;margin-bottom:18px;}
+button{width:100%;padding:15px;border:none;border-radius:12px;background:#006b3f;color:white;font-size:16px;font-weight:bold;margin-top:15px;cursor:pointer;}
+button:hover{background:#004f2f;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:20px;}
+.gallery img{width:100%;border-radius:14px;border:3px solid #dfe5e1;}
+.footer{background:#00331f;color:white;padding:35px;text-align:center;line-height:2;margin-top:40px;}
+ul{padding-left:20px;line-height:2;}
+.qr{width:250px;border-radius:18px;border:4px solid #dfe5e1;padding:10px;background:white;}
+</style>
+</head>
+<body>
+
+<div id="inicioHero" style="background:linear-gradient(135deg,#065f46,#166534,#14532d);padding:40px 30px;border-radius:0 0 28px 28px;color:white;box-shadow:0 10px 28px rgba(0,0,0,0.20);margin-bottom:28px;">
+<div style="max-width:1200px;margin:auto;">
+<h1 style="margin:0;font-size:42px;letter-spacing:1px;text-align:center;">COMISIÓN FEDERAL DE ELECTRICIDAD</h1>
+<h2 style="margin-top:12px;font-size:28px;text-align:center;font-weight:700;">Sistema Digital de Atención y Validación Operativa CFE 071</h2>
+<p style="text-align:center;font-size:17px;opacity:.94;line-height:2;max-width:950px;margin:20px auto 0 auto;">
+Plataforma de validación, orientación técnica y seguimiento operativo para atención de usuarios CFE en reportes de energía, servicios eléctricos y contratación en baja tensión.
+</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:32px;">
+<div style="background:rgba(255,255,255,0.10);backdrop-filter:blur(6px);padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,0.12);">
+<h3 style="margin-top:0;">⚡ Validación de Fallas</h3>
+<p style="line-height:1.8;font-size:14px;opacity:.95;">Atención y validación de reportes individuales y grupales de energía eléctrica.</p>
+</div>
+
+<div style="background:rgba(255,255,255,0.10);backdrop-filter:blur(6px);padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,0.12);">
+<h3 style="margin-top:0;">🛠 Servicios Técnicos</h3>
+<p style="line-height:1.8;font-size:14px;opacity:.95;">Gestión y orientación sobre solicitudes técnicas y operativas de servicio.</p>
+</div>
+
+<div style="background:rgba(255,255,255,0.10);backdrop-filter:blur(6px);padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,0.12);">
+<h3 style="margin-top:0;">📄 Contratación B.T.</h3>
+<p style="line-height:1.8;font-size:14px;opacity:.95;">Consulta de requisitos, materiales y preparación eléctrica conforme a normativa CFE.</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function mostrarProtocolo(id){
+  const protocolos = document.querySelectorAll('.protocolo');
+  protocolos.forEach(function(p){
+    p.style.display='none';
+  });
+
+  const activo = document.getElementById(id);
+
+  if(activo){
+    activo.style.display='block';
+    window.scrollTo({top:activo.offsetTop-40,behavior:'smooth'});
+  }
+}
+
+function regresarMenu(){
+  const protocolos = document.querySelectorAll('.protocolo');
+
+  protocolos.forEach(function(p){
+    p.style.display='none';
+  });
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+<header>
+<h1>COMISIÓN FEDERAL DE ELECTRICIDAD</h1>
+<h2>ATENCIÓN DIGITAL CFE 071</h2>
+<p>"Nuestro personal trabaja para ti"</p>
+</header>
+
+<div class="container">
+
+<div class="card" style="border-left:10px solid #c28b00;">
+<h2>📌 SELECCIONE EL TIPO DE SOLICITUD</h2>
+<p style="line-height:2;">
+Seleccione únicamente el protocolo correspondiente para iniciar la validación operativa.
+</p>
+
+<div style="display:grid;grid-template-columns:1fr;gap:18px;margin-top:25px;">
+
+<button onclick="mostrarProtocolo('p1')" style="padding:22px;font-size:18px;background:#006b3f;">
+⚡ PROTOCOLO 1 – QUEJA INDIVIDUAL “SIN LUZ”
+</button>
+
+<button onclick="mostrarProtocolo('p2')" style="padding:22px;font-size:18px;background:#005f73;">
+🌎 PROTOCOLO 2 – SECTOR FUERA FALLA GRUPAL
+</button>
+
+<button onclick="mostrarProtocolo('p3')" style="padding:22px;font-size:18px;background:#0a6c74;">
+🛠️ PROTOCOLO 3 – GENERACIÓN DE UN SERVICIO
+</button>
+
+<button onclick="mostrarProtocolo('p4')" style="padding:22px;font-size:18px;background:#8a5b00;">
+📄 PROTOCOLO 4 – REQUISITOS DE CONTRATACIÓN EN B.T.
+</button>
+
+</div>
+
+<div class="alert" style="margin-top:25px;">
+La información de cada protocolo permanecerá oculta hasta ser seleccionada para evitar confusiones o validaciones incorrectas.
+</div>
+</div>
+
+<div class="alert" style="margin-top:25px;">
+La validación deberá realizarse únicamente sobre el protocolo seleccionado.
+</div>
+</div>
+
+<div id="p1" class="card protocolo" style="display:none;">
+<h2>⚡ PROTOCOLO 1 – QUEJA INDIVIDUAL “SIN LUZ”</h2>
+
+<p style="line-height:2;">
+Validación preliminar orientada a descartar posibles fallas internas antes de proceder a generar reporte oficial mediante atención CFE 071.
+</p>
+
+<div style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:28px;border-radius:22px;margin-top:20px;margin-bottom:30px;color:white;box-shadow:0 10px 30px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:14px;">📋 DATOS GENERALES DEL CLIENTE</h3>
+<p style="opacity:.88;margin-top:10px;line-height:1.8;">
+Campos obligatorios antes de proceder a validación operativa y generación de reporte al 071.
+</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;">
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Número de servicio (RPU)</label>
+<p style="font-size:12px;color:#6b7280;margin-bottom:10px;line-height:1.5;">Ingrese los 12 dígitos del RPU tal como aparecen en el recibo CFE.</p>
+<input type="number" inputmode="numeric" pattern="[0-9]*" maxlength="12" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,12);" placeholder="Ingrese 12 dígitos numéricos del RPU" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Número de medidor</label>
+<input type="text" placeholder="Ingrese número de medidor" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="grid-column:1 / span 2;background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Dirección completa del domicilio</label>
+<input type="text" placeholder="Ingrese dirección completa" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Colonia</label>
+<input type="text" placeholder="Ingrese colonia" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Teléfono de contacto</label>
+<input type="text" placeholder="Ingrese teléfono de contacto" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="grid-column:1 / span 2;background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Referencia del domicilio (punto de referencia cercano)</label>
+<input type="text" placeholder="Ejemplo: frente a escuela, farmacia o negocio conocido" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">⚡ CUESTIONARIO DE VALIDACIÓN – QUEJA INDIVIDUAL “SIN LUZ”</h3>
+
+<h4>1. ¿Solo su domicilio está sin luz o también otros vecinos cercanos?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_1"> Solo mi domicilio</label></li>
+<li><label><input type="radio" name="p1_1"> También vecinos cercanos</label></li>
+</ul>
+
+<h4>2. ¿Qué tipo de problema presenta?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_2"> Sin luz en todo el domicilio</label></li>
+<li><label><input type="radio" name="p1_2"> Se va y regresa la luz (intermitente)</label></li>
+<li><label><input type="radio" name="p1_2"> Falso contacto en el medidor</label></li>
+<li><label><input type="radio" name="p1_2"> Falso contacto en la acometida</label></li>
+<li><label><input type="radio" name="p1_2"> Acometida reventada</label></li>
+<li><label><input type="radio" name="p1_2"> Robo de medidor</label></li>
+<li><label><input type="radio" name="p1_2"> Medidor dañado</label></li>
+<li><label><input type="radio" name="p1_2"> Voltaje bajo o inestable</label></li>
+</ul>
+
+<h4>3. ¿Tiene algún adeudo o convenio de pago vigente con CFE?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_3"> Sí</label></li>
+<li><label><input type="radio" name="p1_3"> No</label></li>
+<li><label><input type="radio" name="p1_3"> No lo sabe</label></li>
+</ul>
+
+<h4>4. ¿Ya revisó su interruptor general?</h4>
+
+<h4>a. Tipo de interruptor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_4a"> Termomagnético – Breaker</label></li>
+<li><label><input type="radio" name="p1_4a"> Caja de fusibles</label></li>
+</ul>
+
+<h4>b. Estado del interruptor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_interruptor_estado"> En buen estado</label></li>
+<li><label><input type="radio" name="p1_interruptor_estado"> Presenta daño visible</label></li>
+<li><label><input type="radio" name="p1_interruptor_estado"> Se encuentra botado</label></li>
+<li><label><input type="radio" name="p1_interruptor_estado"> Genera falso contacto</label></li>
+<li><label><input type="radio" name="p1_interruptor_estado"> No fue posible validar</label></li>
+<li><label><input type="radio" name="p1_interruptor_estado"> No sabe identificarlo</label></li>
+</ul>
+
+<h4>c. Revisó la caja de fusibles que no esté alguno dañado o quemado</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_4c"> Fusibles correctos</label></li>
+<li><label><input type="radio" name="p1_4c"> Fusibles dañados o quemados</label></li>
+</ul>
+
+<h4>d. Ubicación del medidor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_4d"> Interior</label></li>
+<li><label><input type="radio" name="p1_4d"> Exterior</label></li>
+</ul>
+
+<h4>5. Por favor, baje su interruptor por 10 segundos y vuelva a subirlo.</h4>
+<div class="alert">✅ Validación realizada</div>
+
+<h4>6. Después de hacerlo, indique:</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_6"> Sigue sin energía</label></li>
+<li><label><input type="radio" name="p1_6"> Ya se restableció el servicio</label></li>
+</ul>
+
+<div style="background:linear-gradient(135deg,#14532d,#166534);padding:28px;border-radius:22px;color:white;margin-bottom:28px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;">✅ SERVICIO RESTABLECIDO CORRECTAMENTE</h3>
+
+<p style="line-height:2;font-size:16px;opacity:.96;">
+El suministro eléctrico fue restablecido después de la revisión interna realizada en el domicilio.
+</p>
+
+<div style="background:rgba(255,255,255,0.12);padding:18px;border-radius:16px;margin-top:20px;">
+<h4 style="margin-top:0;">🔧 RECOMENDACIÓN PREVENTIVA</h4>
+<p style="line-height:2;">
+Se recomienda realizar mantenimiento o corrección de la instalación eléctrica interna del domicilio para evitar futuras interrupciones, falsos contactos, sobrecargas o daños eléctricos que puedan volver a generar afectaciones en el servicio.
+</p>
+</div>
+
+<div style="background:rgba(255,255,255,0.10);padding:18px;border-radius:16px;margin-top:18px;">
+<h4 style="margin-top:0;">⚠ IMPORTANTE</h4>
+<p style="line-height:2;">
+Al restablecerse el servicio eléctrico durante la validación, no es necesario generar reporte al 071. El proceso de validación puede finalizarse y regresar al menú principal.
+</p>
+</div>
+
+<div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;">
+<button onclick="regresarMenu()" style="background:white;color:#166534;font-weight:700;">
+✅ FINALIZAR VALIDACIÓN Y REGRESAR AL MENÚ PRINCIPAL
+</button>
+
+<button onclick="regresarMenu()" style="background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);">
+⬅ REGRESAR AL MENÚ PRINCIPAL
+</button>
+</div>
+</div>
+
+<div style="background:linear-gradient(135deg,#78350f,#92400e);padding:30px;border-radius:22px;color:white;margin-bottom:30px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;">⚠ CONTINÚA VALIDACIÓN OPERATIVA</h3>
+
+<p style="line-height:2;font-size:16px;opacity:.96;">
+Después de validar interruptor, fusibles e instalación interna, el domicilio continúa sin energía eléctrica.
+</p>
+
+<div style="background:rgba(255,255,255,0.10);padding:20px;border-radius:16px;margin-top:20px;">
+<h4 style="margin-top:0;">🔎 VALIDACIÓN TÉCNICA AVANZADA</h4>
+<p style="line-height:2;">
+Continúe con la validación avanzada para identificar posibles afectaciones en medidor, acometida o infraestructura eléctrica antes de proceder a generar reporte oficial al 071.
+</p>
+</div>
+
+<div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;">
+<button style="background:white;color:#92400e;font-weight:700;">
+⚡ CONTINUAR VALIDACIÓN AVANZADA
+</button>
+</div>
+</div>
+
+<h4>7. Revise su medidor</h4>
+
+<h4>a. Tipo de medidor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_7a"> Digital</label></li>
+<li><label><input type="radio" name="p1_7a"> Electromecánico</label></li>
+</ul>
+
+<h4>b. Si es digital</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_7b"> Pantalla encendida</label></li>
+<li><label><input type="radio" name="p1_7b"> Pantalla apagada</label></li>
+</ul>
+
+<h4>c. Si es electromecánico</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_7c"> Disco gira</label></li>
+<li><label><input type="radio" name="p1_7c"> Disco detenido</label></li>
+</ul>
+
+<h4>8. Ubicación del medidor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_8"> Interior</label></li>
+<li><label><input type="radio" name="p1_8"> Exterior</label></li>
+</ul>
+
+<h4>9. ¿Cuenta con preparación conforme a normas de CFE a límite de predio?</h4>
+<p><strong>(base, tubo, mufa y bajante a tierra)</strong></p>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_9"> Sí cumple</label></li>
+<li><label><input type="radio" name="p1_9"> No cumple</label></li>
+<li><label><input type="radio" name="p1_9"> Parcialmente</label></li>
+</ul>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🚨 PASO FINAL ANTES DE LLAMAR AL 071</h3>
+
+<h4>10. Después de todos los pasos anteriores, ¿su domicilio sigue sin energía eléctrica?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p1_10"> Sí, sigo sin energía</label></li>
+<li><label><input type="radio" name="p1_10"> No, ya se restableció el servicio</label></li>
+</ul>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📝 COMENTARIO ADICIONAL DEL CLIENTE</h3>
+
+<p style="line-height:2;">
+Describa con más detalle la problemática que presenta en su domicilio después de haber revisado interruptor, fusibles, medidor e instalación interna.
+</p>
+
+<textarea placeholder="Describa ruidos, chispas, olor a quemado, cables dañados, falso contacto, variaciones de voltaje, acometida dañada, poste dañado o cualquier condición observada." style="width:100%;min-height:220px;padding:18px;border-radius:14px;border:1px solid #cfd8d3;line-height:1.8;"></textarea>
+
+<div class="alert" style="margin-top:20px;">
+⚠ Confirmando que previamente se revisó la instalación interna del domicilio y continúan las afectaciones eléctricas reportadas por el cliente.
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📞 GENERACIÓN DE REPORTE CFE</h3>
+
+<p style="line-height:2;">
+Si después de todas las validaciones el domicilio continúa sin energía eléctrica, se procede a realizar llamada al 071 para generar el número de reporte oficial con CFE.
+</p>
+
+<button style="background:#c28b00;">
+📞 PROCEDER A LLAMAR AL 071
+</button>
+
+<button onclick="regresarMenu()" style="background:#4b5563;margin-top:12px;">
+⬅ REGRESAR AL MENÚ PRINCIPAL
+</button>
+</div>
+
+<div id="p2" class="card protocolo" style="display:none;">
+<h2>🌎 PROTOCOLO 2 – SECTOR FUERA FALLA GRUPAL</h2>
+
+<p style="line-height:2;">
+Validación operativa orientada a identificar afectaciones grupales en múltiples usuarios antes de generar reporte oficial mediante atención CFE 071.
+</p>
+
+<div style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:28px;border-radius:22px;margin-top:20px;margin-bottom:30px;color:white;box-shadow:0 10px 30px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:14px;">📋 DATOS GENERALES DEL CLIENTE</h3>
+<p style="opacity:.88;margin-top:10px;line-height:1.8;">
+Campos obligatorios antes de proceder a validación operativa y generación de reporte al 071.
+</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;">
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Número de servicio (RPU)</label>
+<p style="font-size:12px;color:#6b7280;margin-bottom:10px;line-height:1.5;">Ingrese los 12 dígitos del RPU tal como aparecen en el recibo CFE.</p>
+<input type="number" inputmode="numeric" pattern="[0-9]*" maxlength="12" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,12);" placeholder="Ingrese 12 dígitos numéricos del RPU" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Número de medidor</label>
+<input type="text" placeholder="Ingrese número de medidor" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="grid-column:1 / span 2;background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Dirección completa del domicilio</label>
+<input type="text" placeholder="Ingrese dirección completa" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Colonia</label>
+<input type="text" placeholder="Ingrese colonia" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Teléfono de contacto</label>
+<input type="text" placeholder="Ingrese teléfono de contacto" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+<div style="grid-column:1 / span 2;background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Referencia del domicilio (punto de referencia cercano)</label>
+<input type="text" placeholder="Ejemplo: frente a escuela, farmacia o negocio conocido" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🌎 CUESTIONARIO DE VALIDACIÓN – FALLA GRUPAL “SECTOR FUERA”</h3>
+
+<h4>1. ¿Solo su domicilio está sin luz o también otros vecinos / casas / negocios cercanos?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_1"> Solo mi domicilio</label></li>
+<li><label><input type="radio" name="p2_1"> Varias casas cercanas</label></li>
+<li><label><input type="radio" name="p2_1"> Negocios afectados</label></li>
+<li><label><input type="radio" name="p2_1"> Toda la calle</label></li>
+<li><label><input type="radio" name="p2_1"> No lo sabe</label></li>
+</ul>
+
+<div style="background:linear-gradient(135deg,#7f1d1d,#991b1b);padding:26px;border-radius:22px;color:white;margin-bottom:28px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:26px;">⚠ POSIBLE FALLA INDIVIDUAL DETECTADA</h3>
+<p style="line-height:2;">
+La afectación detectada parece corresponder a falla individual y no a sector fuera.
+</p>
+<button onclick="mostrarProtocolo('p1')" style="background:white;color:#991b1b;font-weight:700;">
+⚡ VALIDAR PROTOCOLO 1 – QUEJA INDIVIDUAL
+</button>
+</div>
+
+<h4>2. ¿Desde hace cuánto tiempo están sin energía eléctrica?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_2"> Menos de 1 hora</label></li>
+<li><label><input type="radio" name="p2_2"> Entre 1 y 3 horas</label></li>
+<li><label><input type="radio" name="p2_2"> Más de 3 horas</label></li>
+<li><label><input type="radio" name="p2_2"> No lo sé</label></li>
+</ul>
+
+<h4>3. ¿Ya revisó su interruptor general?</h4>
+<h4>a. Tipo de interruptor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_3a"> Termomagnético – Breaker</label></li>
+<li><label><input type="radio" name="p2_3a"> Caja de fusibles</label></li>
+</ul>
+
+<h4>b. Estado del interruptor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_3b"> En buen estado</label></li>
+<li><label><input type="radio" name="p2_3b"> Presenta daño visible</label></li>
+<li><label><input type="radio" name="p2_3b"> Se encuentra botado</label></li>
+<li><label><input type="radio" name="p2_3b"> Genera falso contacto</label></li>
+<li><label><input type="radio" name="p2_3b"> No fue posible validar</label></li>
+<li><label><input type="radio" name="p2_3b"> No sabe identificarlo</label></li>
+</ul>
+
+<h4>c. Revisó la caja de fusibles que no esté alguno dañado o quemado</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_3c"> Fusibles correctos</label></li>
+<li><label><input type="radio" name="p2_3c"> Fusibles dañados o quemados</label></li>
+</ul>
+
+<h4>d. Ubicación del medidor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_3d"> Interior</label></li>
+<li><label><input type="radio" name="p2_3d"> Exterior</label></li>
+</ul>
+
+<h4>4. Por favor, baje su interruptor por 10 segundos y vuelva a subirlo.</h4>
+<div class="alert">✅ Validación realizada</div>
+
+<h4>5. Después de hacerlo, indique:</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_5"> Sigue sin energía</label></li>
+<li><label><input type="radio" name="p2_5"> Ya se restableció el servicio</label></li>
+</ul>
+
+<div style="background:linear-gradient(135deg,#14532d,#166534);padding:28px;border-radius:22px;color:white;margin-bottom:28px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;">✅ SERVICIO RESTABLECIDO CORRECTAMENTE</h3>
+<p style="line-height:2;font-size:16px;opacity:.96;">
+El suministro eléctrico fue restablecido después de la validación realizada en la zona.
+</p>
+<div style="background:rgba(255,255,255,0.12);padding:18px;border-radius:16px;margin-top:20px;">
+<h4 style="margin-top:0;">🔧 RECOMENDACIÓN PREVENTIVA</h4>
+<p style="line-height:2;">
+Se recomienda continuar monitoreando las instalaciones eléctricas internas y externas para evitar futuras interrupciones o afectaciones grupales.
+</p>
+</div>
+<div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;">
+<button onclick="regresarMenu()" style="background:white;color:#166534;font-weight:700;">
+✅ FINALIZAR VALIDACIÓN Y REGRESAR AL MENÚ PRINCIPAL
+</button>
+</div>
+</div>
+
+<div style="background:linear-gradient(135deg,#78350f,#92400e);padding:30px;border-radius:22px;color:white;margin-bottom:30px;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;">⚠ CONTINÚA VALIDACIÓN OPERATIVA</h3>
+<p style="line-height:2;font-size:16px;opacity:.96;">
+Después de validar interruptor, fusibles e instalación interna, múltiples usuarios continúan sin energía eléctrica.
+</p>
+<div style="background:rgba(255,255,255,0.10);padding:20px;border-radius:16px;margin-top:20px;">
+<h4 style="margin-top:0;">🔎 VALIDACIÓN TÉCNICA AVANZADA</h4>
+<p style="line-height:2;">
+Continúe con la validación avanzada para identificar posibles afectaciones en medidor, acometida o infraestructura eléctrica antes de proceder a generar reporte oficial al 071.
+</p>
+</div>
+</div>
+
+<h4>6. Revise su medidor:</h4>
+
+<h4>a. Tipo de medidor tiene</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_6a"> Digital</label></li>
+<li><label><input type="radio" name="p2_6a"> Electromecánico</label></li>
+</ul>
+
+<h4>b. Si es digital</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_6b"> Pantalla encendida</label></li>
+<li><label><input type="radio" name="p2_6b"> Pantalla apagada</label></li>
+</ul>
+
+<h4>c. Si es electromecánico</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_6c"> Disco gira</label></li>
+<li><label><input type="radio" name="p2_6c"> Disco detenido</label></li>
+</ul>
+
+<h4>d. Ubicación del medidor</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_6d"> Interior</label></li>
+<li><label><input type="radio" name="p2_6d"> Exterior</label></li>
+</ul>
+
+<h4>7. En la zona, ¿se presenta alguno de estos casos?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_7"> Lluvia fuerte</label></li>
+<li><label><input type="radio" name="p2_7"> Descargas eléctricas</label></li>
+<li><label><input type="radio" name="p2_7"> Vientos fuertes</label></li>
+<li><label><input type="radio" name="p2_7"> Ninguna de las anteriores</label></li>
+</ul>
+
+<h4>8. ¿Observa alguno de estos daños en la calle o instalaciones de CFE?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_8"> Poste dañado o inclinado</label></li>
+<li><label><input type="radio" name="p2_8"> Árboles o ramas sobre la línea</label></li>
+<li><label><input type="radio" name="p2_8"> Líneas caídas o reventadas</label></li>
+<li><label><input type="radio" name="p2_8"> Transformador quemado o tirando aceite</label></li>
+<li><label><input type="radio" name="p2_8"> Fusible operado en transformador (canilla caída)</label></li>
+<li><label><input type="radio" name="p2_8"> Otro daño visible</label></li>
+</ul>
+
+<input type="text" placeholder="Describa otro daño visible observado" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;margin-bottom:20px;">
+
+<h4>9. ¿Hay lugares sensibles sin energía?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_9"> Hospital o clínica</label></li>
+<li><label><input type="radio" name="p2_9"> Escuela</label></li>
+<li><label><input type="radio" name="p2_9"> Semáforos apagados</label></li>
+<li><label><input type="radio" name="p2_9"> Negocios esenciales (farmacia, gasolinera, etc.)</label></li>
+<li><label><input type="radio" name="p2_9"> No aplica / No lo sé</label></li>
+</ul>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🚨 PASO FINAL ANTES DE LLAMAR AL 071</h3>
+
+<h4>10. Después de revisar todo lo anterior, ¿la zona sigue sin energía eléctrica?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p2_10"> Sí, varias casas/negocios siguen sin luz</label></li>
+<li><label><input type="radio" name="p2_10"> No, ya se restableció el servicio</label></li>
+</ul>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📝 COMENTARIO ADICIONAL</h3>
+
+<p style="line-height:2;">
+Describa con más detalle lo que observa en la zona (cables caídos, poste dañado, explosión en transformador, cuadrilla de CFE trabajando, semáforos apagados, etc.).
+</p>
+
+<textarea placeholder="Describa detalladamente la problemática observada en la zona." style="width:100%;min-height:220px;padding:18px;border-radius:14px;border:1px solid #cfd8d3;line-height:1.8;"></textarea>
+
+<div class="alert" style="margin-top:20px;">
+⚠ Confirmando que múltiples usuarios continúan afectados y persisten las condiciones de falla grupal reportadas.
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📞 GENERACIÓN DE REPORTE CFE</h3>
+
+<p style="line-height:2;">
+Si después de estos pasos la zona sigue sin energía, se procede a llamar al 071 para generar el número de reporte con CFE.
+</p>
+
+<button style="background:#c28b00;">
+📞 PROCEDER A LLAMAR AL 071
+</button>
+
+<button onclick="regresarMenu()" style="background:#4b5563;margin-top:12px;">
+⬅ REGRESAR AL MENÚ PRINCIPAL
+</button>
+</div>
+
+</div>
+
+<div id="p3" class="card protocolo" style="display:none;">
+<h2>🛠️ PROTOCOLO 3 – GENERACIÓN DE UN SERVICIO</h2>
+
+<p style="line-height:2;">
+Validación operativa orientada a solicitudes de servicio técnico, administrativo o modificación de instalación antes de generar reporte oficial mediante atención CFE 071.
+</p>
+
+<div style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:28px;border-radius:22px;margin-top:20px;margin-bottom:30px;color:white;box-shadow:0 10px 30px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:14px;">📋 DATOS GENERALES DEL CLIENTE</h3>
+<p style="opacity:.88;margin-top:10px;line-height:1.8;">Campos obligatorios antes de proceder a validación operativa y generación de reporte al 071.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;">
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Número de servicio (RPU)</label>
+<p style="font-size:12px;color:#6b7280;margin-bottom:10px;line-height:1.5;">Ingrese los 12 dígitos del RPU tal como aparecen en el recibo CFE.</p>
+<input type="number" inputmode="numeric" pattern="[0-9]*" maxlength="12" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,12);" placeholder="Ingrese 12 dígitos numéricos del RPU" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Número de medidor</label>
+<input type="text" placeholder="Ingrese número de medidor" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+<div style="grid-column:1 / span 2;background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Dirección completa del domicilio</label>
+<input type="text" placeholder="Ingrese dirección completa" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Colonia</label>
+<input type="text" placeholder="Ingrese colonia" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+<div style="background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Teléfono de contacto</label>
+<input type="text" placeholder="Ingrese teléfono de contacto" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+<div style="grid-column:1 / span 2;background:white;color:#111827;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+<label style="display:block;font-weight:700;margin-bottom:10px;">🔹 Referencia del domicilio (punto de referencia cercano)</label>
+<input type="text" placeholder="Ejemplo: frente a escuela, farmacia o negocio conocido" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;">
+</div>
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🛠️ TIPO DE SERVICIO QUE SOLICITA</h3>
+<h4>1. ¿Qué tipo de servicio necesita?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_1"> Verificación por alto consumo</label></li>
+<li><label><input type="radio" name="p3_1"> Medidor dañado u obsoleto</label></li>
+<li><label><input type="radio" name="p3_1"> Relocalización o reubicación de servicio</label></li>
+<li><label><input type="radio" name="p3_1"> Asesoría por modificación en la instalación</label></li>
+<li><label><input type="radio" name="p3_1"> Desconexión por finiquito</label></li>
+<li><label><input type="radio" name="p3_1"> Libranza en baja tensión para modificar instalación</label></li>
+<li><label><input type="radio" name="p3_1"> Restablecimiento en baja tensión después de modificar instalación</label></li>
+<li><label><input type="radio" name="p3_1"> Mejora de acometida por daño o reventada</label></li>
+<li><label><input type="radio" name="p3_1"> Reconexión de medidor por adeudo pagado</label></li>
+<li><label><input type="radio" name="p3_1"> Reconexión en red por adeudo pagado</label></li>
+<li><label><input type="radio" name="p3_1"> Servicio sin sello</label></li>
+<li><label><input type="radio" name="p3_1"> Reconexión por ajuste pagado</label></li>
+<li><label><input type="radio" name="p3_1"> Poda de árboles o ramas sobre línea o acometida</label></li>
+<li><label><input type="radio" name="p3_1"> Otro servicio</label></li>
+</ul>
+<input type="text" placeholder="Describa otro tipo de servicio solicitado" style="width:100%;padding:14px;border-radius:12px;border:1px solid #d1d5db;font-size:15px;margin-bottom:24px;">
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">⚡ SITUACIÓN DE LA INSTALACIÓN Y ADEUDOS</h3>
+<h4>2. ¿Cuenta con preparación conforme a normas de CFE a límite de predio?</h4>
+<p><strong>(base, tubo, mufa y bajante a tierra)</strong></p>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_2"> Sí cumple</label></li>
+<li><label><input type="radio" name="p3_2"> No cumple</label></li>
+<li><label><input type="radio" name="p3_2"> Parcialmente</label></li>
+<li><label><input type="radio" name="p3_2"> No lo sabe</label></li>
+</ul>
+<h4>3. ¿Presenta algún adeudo reciente por facturación o ajuste?</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_3"> Sí</label></li>
+<li><label><input type="radio" name="p3_3"> No</label></li>
+<li><label><input type="radio" name="p3_3"> No lo sé</label></li>
+</ul>
+<textarea placeholder="Si respondió sí, describa brevemente el adeudo o ajuste reciente." style="width:100%;min-height:120px;padding:18px;border-radius:14px;border:1px solid #cfd8d3;line-height:1.8;margin-bottom:24px;"></textarea>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🔎 PREGUNTAS ADICIONALES SEGÚN EL TIPO DE SERVICIO</h3>
+<div class="alert">⚠ Las siguientes preguntas deberán responderse únicamente según el tipo de servicio seleccionado.</div>
+<h4>1. Si selecciona “Verificación por alto consumo”</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_alto_1"> Menos de 1 mes</label></li>
+<li><label><input type="radio" name="p3_alto_1"> Entre 1 y 3 meses</label></li>
+<li><label><input type="radio" name="p3_alto_1"> Más de 3 meses</label></li>
+<li><label><input type="radio" name="p3_alto_2"> Hubo cambios recientes en la instalación</label></li>
+<li><label><input type="radio" name="p3_alto_2"> Se agregaron nuevos aparatos eléctricos</label></li>
+<li><label><input type="radio" name="p3_alto_2"> No hubo modificaciones recientes</label></li>
+</ul>
+<h4>2. Si selecciona “Medidor dañado u obsoleto”</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_medidor"> No marca</label></li>
+<li><label><input type="radio" name="p3_medidor"> Marca irregular</label></li>
+<li><label><input type="radio" name="p3_medidor"> Caja rota</label></li>
+<li><label><input type="radio" name="p3_medidor"> Cristal estrellado</label></li>
+<li><label><input type="radio" name="p3_medidor"> Pantalla apagada</label></li>
+<li><label><input type="radio" name="p3_medidor"> Otro daño visible</label></li>
+</ul>
+<h4>3. Si selecciona “Relocalización o reubicación de servicio”</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_reubica_1"> Dentro del mismo predio</label></li>
+<li><label><input type="radio" name="p3_reubica_1"> A otro punto del inmueble</label></li>
+<li><label><input type="radio" name="p3_reubica_2"> Sí cuenta con nueva preparación</label></li>
+<li><label><input type="radio" name="p3_reubica_2"> No cuenta con preparación</label></li>
+<li><label><input type="radio" name="p3_reubica_2"> En proceso de preparación</label></li>
+</ul>
+<h4>4. Si selecciona “Poda de árboles o ramas sobre línea o acometida”</h4>
+<ul style="list-style:none;padding-left:0;line-height:2.5;background:#f8faf9;padding:18px;border-radius:14px;border:1px solid #dfe5e1;margin-bottom:20px;">
+<li><label><input type="radio" name="p3_poda_1"> Las ramas tocan directamente la línea</label></li>
+<li><label><input type="radio" name="p3_poda_1"> Las ramas están muy cerca</label></li>
+<li><label><input type="radio" name="p3_poda_2"> Existe riesgo visible de daño</label></li>
+<li><label><input type="radio" name="p3_poda_2"> Existe riesgo de caída de cables</label></li>
+<li><label><input type="radio" name="p3_poda_2"> No se observa riesgo inmediato</label></li>
+</ul>
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📝 COMENTARIO ADICIONAL</h3>
+<p style="line-height:2;">Describa con más detalle el servicio que requiere, incluyendo si ya hubo visitas anteriores de CFE o reportes previos.</p>
+<textarea placeholder="Describa detalladamente la solicitud de servicio requerida." style="width:100%;min-height:220px;padding:18px;border-radius:14px;border:1px solid #cfd8d3;line-height:1.8;"></textarea>
+<div class="alert" style="margin-top:20px;">⚠ Confirmando que el cliente requiere atención de servicio técnico-operativo y que la información proporcionada es correcta para proceder a generar el reporte correspondiente con CFE.</div>
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📞 GENERACIÓN DE REPORTE CFE</h3>
+<p style="line-height:2;">Si la información está completa y el cliente entiende que se trata de una solicitud de servicio, se procede a llamar al 071 para generar el número de reporte de servicio con CFE.</p>
+<button style="background:#c28b00;">📞 PROCEDER A LLAMAR AL 071</button>
+<button onclick="regresarMenu()" style="background:#4b5563;margin-top:12px;">⬅ REGRESAR AL MENÚ PRINCIPAL</button>
+</div>
+<div id="p4" class="card protocolo" style="display:none;">
+<h2>📄 PROTOCOLO 4 – REQUISITOS DE CONTRATACIÓN EN B.T.</h2>
+
+<p style="line-height:2;">
+Consulta informativa sobre requisitos de contratación en Baja Tensión. El trámite se realiza directamente en oficinas de CFE.
+</p>
+
+<div class="alert">
+⚠ Este procedimiento es únicamente informativo. La contratación del servicio se realiza directamente en ventanilla CFE y no mediante el 071.
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">⚡ PASO 1 – SITUACIÓN DEL SERVICIO</h3>
+
+<h4>1. Verifique si cuenta con algún adeudo o ajuste pendiente con CFE</h4>
+
+<div style="background:linear-gradient(135deg,#f8faf9,#eef5f1);padding:22px;border-radius:18px;border:1px solid #dfe5e1;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,0.06);line-height:2;">
+⚠ En caso de presentar adeudos o ajustes pendientes, deberá regularizar su situación antes de iniciar el trámite de contratación.
+</div>
+
+<h4>2. Identifique el tipo de servicio que requiere contratar</h4>
+
+<div style="background:linear-gradient(135deg,#f8faf9,#eef5f1);padding:24px;border-radius:18px;border:1px solid #dfe5e1;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;line-height:2;">
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🏠 Servicio totalmente nuevo
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🔄 Ya existió contrato anteriormente en el predio
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;grid-column:1 / span 2;">
+⚡ Reconexión de servicio
+</div>
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">👤 PASO 2 – DATOS QUE DEBERÁ PRESENTAR EL TITULAR EN CFE</h3>
+
+<div class="alert">
+📄 Los siguientes datos únicamente son informativos y deberán presentarse directamente en oficinas CFE al momento de realizar el trámite.
+</div>
+
+<div style="background:linear-gradient(135deg,#f8faf9,#eef5f1);padding:24px;border-radius:18px;border:1px solid #dfe5e1;margin-top:20px;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;line-height:2;">
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📄 Nombre completo del titular
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🏢 Persona Física o Persona Moral
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📍 Dirección completa con número oficial
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📮 Colonia y Código Postal
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📞 Teléfono y correo electrónico
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🧭 Referencia del domicilio
+</div>
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">📑 PASO 3 – DOCUMENTOS QUE DEBE PRESENTAR</h3>
+
+<div style="background:linear-gradient(135deg,#f8faf9,#eef5f1);padding:24px;border-radius:18px;border:1px solid #dfe5e1;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;line-height:2;">
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🪪 INE vigente del titular
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🏠 Comprobante de domicilio
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+🔌 Dato del medidor vecino izquierdo o derecho
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📂 Documentación completa
+</div>
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">⚡ PASO 4 – PREPARACIÓN ELÉCTRICA EN EL PREDIO</h3>
+
+<div class="alert">
+⚠ Antes de acudir a CFE, la preparación eléctrica debe encontrarse instalada a límite de predio conforme a especificación.
+</div>
+
+<h4>🔧 Materiales básicos que debe instalar</h4>
+
+<div style="background:linear-gradient(135deg,#f8faf9,#eef5f1);padding:24px;border-radius:18px;border:1px solid #dfe5e1;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;line-height:1.8;">
+
+<div style="background:white;padding:18px;border-radius:16px;box-shadow:0 6px 14px rgba(0,0,0,0.08);text-align:center;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Electric_meter_base.jpg/320px-Electric_meter_base.jpg" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;margin-bottom:14px;">
+<h4>🔌 Base tipo socket 4 terminales</h4>
+<p>Base donde se instala el medidor monofásico de CFE.</p>
+</div>
+
+<div style="background:white;padding:18px;border-radius:16px;box-shadow:0 6px 14px rgba(0,0,0,0.08);text-align:center;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Circuit_breakers.jpg/320px-Circuit_breakers.jpg" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;margin-bottom:14px;">
+<h4>⚡ Interruptor termomagnético</h4>
+<p>Protección principal de la instalación eléctrica.</p>
+</div>
+
+<div style="background:white;padding:18px;border-radius:16px;box-shadow:0 6px 14px rgba(0,0,0,0.08);text-align:center;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Conduit_pipe.jpg/320px-Conduit_pipe.jpg" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;margin-bottom:14px;">
+<h4>🛠 Tubo Conduit galvanizado</h4>
+<p>Tubería utilizada para proteger conductores eléctricos.</p>
+</div>
+
+<div style="background:white;padding:18px;border-radius:16px;box-shadow:0 6px 14px rgba(0,0,0,0.08);text-align:center;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Copper_wire.jpg/320px-Copper_wire.jpg" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;margin-bottom:14px;">
+<h4>🔋 Cable calibre 8 AWG</h4>
+<p>Conductor de cobre utilizado para alimentación eléctrica.</p>
+</div>
+
+<div style="background:white;padding:18px;border-radius:16px;box-shadow:0 6px 14px rgba(0,0,0,0.08);text-align:center;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Weatherhead_electrical_service.jpg/320px-Weatherhead_electrical_service.jpg" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;margin-bottom:14px;">
+<h4>📍 Mufa</h4>
+<p>Elemento que protege la entrada del cableado aéreo.</p>
+</div>
+
+<div style="background:white;padding:18px;border-radius:16px;box-shadow:0 6px 14px rgba(0,0,0,0.08);text-align:center;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Ground_rod.jpg/320px-Ground_rod.jpg" style="width:100%;max-height:180px;object-fit:contain;border-radius:12px;margin-bottom:14px;">
+<h4>🌎 Sistema de tierra física</h4>
+<p>Incluye bajante y varilla de tierra para protección eléctrica.</p>
+</div>
+
+</div>
+</div>
+
+<h4>📏 Altura y distancia permitida</h4>
+
+<div style="background:linear-gradient(135deg,#f8faf9,#eef5f1);padding:24px;border-radius:18px;border:1px solid #dfe5e1;margin-bottom:24px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+<div style="display:grid;grid-template-columns:1fr;gap:16px;line-height:2;">
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📐 La base y el medidor deben quedar a 1.80 m de altura conforme a especificación CFE.
+</div>
+<div style="background:white;padding:16px;border-radius:14px;border-left:5px solid #166534;">
+📏 El último poste debe ubicarse máximo a 50 m del punto de conexión y sin cruce de predios.
+</div>
+</div>
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🖼 PASO 5 – IMÁGENES DE REFERENCIA CFE</h3>
+
+<p style="line-height:2;">
+Consulta las siguientes imágenes oficiales de referencia para validar cómo debe quedar correctamente tu preparación eléctrica conforme a especificación CFE.
+</p>
+
+<div style="display:grid;grid-template-columns:1fr;gap:28px;margin-top:24px;">
+
+<div style="background:white;padding:22px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,0.10);">
+<h4 style="margin-top:0;color:#166534;">📐 Imagen 1 – Norma de conexión aérea monofásica</h4>
+<p style="line-height:1.9;color:#4b5563;">
+Referencia visual de conexión monofásica aérea en baja tensión conforme a especificación CFE.
+</p>
+<img src="Imagen2.jpg" style="width:30%;border-radius:16px;margin-top:12px;box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+</div>
+
+<div style="background:white;padding:22px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,0.10);">
+<h4 style="margin-top:0;color:#166534;">📏 Imagen 2 – Especificaciones y materiales permitidos</h4>
+<p style="line-height:1.9;color:#4b5563;">
+Consulta las especificaciones técnicas de materiales, base, mufa, interruptor y preparación autorizada por CFE.
+</p>
+<img src="Imagen3.jpg" style="width:30%;border-radius:16px;margin-top:12px;box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+</div>
+
+<div style="background:white;padding:22px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,0.10);">
+<h4 style="margin-top:0;color:#166534;">🛠 Imagen 3 – Materiales y preparación física requerida</h4>
+<p style="line-height:1.9;color:#4b5563;">
+Visualización de materiales básicos y ejemplo de preparación física requerida para contratación en baja tensión.
+</p>
+<img src="Imagen4.jpg" style="width:30%;border-radius:16px;margin-top:12px;box-shadow:0 6px 16px rgba(0,0,0,0.12);">
+</div>
+
+</div>
+
+<h3 style="margin-top:30px;border-bottom:2px solid #d9dfdc;padding-bottom:10px;">🏢 PASO 6 – ACUDIR A OFICINAS CFE</h3>
+
+<div style="background:linear-gradient(135deg,#14532d,#166534);padding:28px;border-radius:22px;color:white;box-shadow:0 10px 25px rgba(0,0,0,0.18);">
+<h3 style="margin-top:0;font-size:28px;">✅ PREPARACIÓN COMPLETA</h3>
+<p style="line-height:2;font-size:16px;opacity:.96;">
+Cuando ya cuentes con tus documentos y tu preparación instalada conforme a especificación CFE, deberás acudir directamente a la sucursal CFE más cercana para realizar el trámite correspondiente.
+</p>
+<div style="background:rgba(255,255,255,0.12);padding:18px;border-radius:16px;margin-top:20px;">
+<h4 style="margin-top:0;">⚠ IMPORTANTE</h4>
+<p style="line-height:2;">
+Este trámite no se realiza mediante el 071. La contratación del servicio se realiza únicamente en oficinas CFE.
+</p>
+</div>
+<div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;">
+<div style="display:flex;gap:14px;flex-wrap:wrap;">
+<button onclick="regresarMenu()" style="background:white;color:#166534;font-weight:700;">
+✅ FINALIZAR CONSULTA
+</button>
+
+<button onclick="regresarMenu()" style="background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);color:white;font-weight:700;">
+⬅ REGRESAR AL MENÚ PRINCIPAL
+</button>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
